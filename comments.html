@@ -32,12 +32,32 @@
       <!-- Sidebar  -->
       <nav id="sidebar">
         <div class="sidebar-header">
-            <a href="index.html">
-              <h3>Code Refactoring</h3>
-            </a>
-          </div>
-
+          <h3>Code Refactoring</h3>
+        </div>
         <ul class="list-unstyled components">
+          <li>
+            <a href="home.html">Home</a>
+          </li>
+          <li>
+            <a
+              href="#pageSubmenu"
+              data-toggle="collapse"
+              aria-expanded="false"
+              class="dropdown-toggle"
+              >Change Preventers</a
+            >
+            <ul class="collapse list-unstyled" id="pageSubmenu">
+              <li>
+                <a href="divergent-change.html">Divergent Change</a>
+              </li>
+              <li>
+                <a href="shotgun-surgery.html">Shotgun Surgery</a>
+              </li>
+              <li>
+                <a href="parallel-inheritanve-hierarchies.html">Parallel Inheritance Hierarchies</a>
+              </li>
+            </ul>
+          </li>
           <li>
             <a
               href="#dispansablesSubmenu"
@@ -51,43 +71,26 @@
                 <a href="comments.html">Comments</a>
               </li>
               <li>
-                <a href="duplicate.html">Duplicate Code</a>
+                <a href="duplicate-code.html">Duplicate Code</a>
               </li>
               <li>
-                <a href="lazy.html">Lazy Class</a>
+                <a href="lazy-class.html">Lazy Class</a>
               </li>
               <li>
-                <a href="data.html">Data</a>
+                <a href="data-class.html">Data Class</a>
               </li>
               <li>
-                <a href="dead.html">Dead Code</a>
+                <a href="dead-code.html">Dead Code</a>
               </li>
               <li>
-                <a href="speculative.html">Speculative Generality</a>
+                <a href="speculative-generality.html">Speculative Generality</a>
               </li>
             </ul>
           </li>
-          <li>
-            <a
-              href="#pageSubmenu"
-              data-toggle="collapse"
-              aria-expanded="false"
-              class="dropdown-toggle"
-              >Change Preventers</a
-            >
-            <ul class="collapse list-unstyled" id="pageSubmenu">
-                <li>
-                  <a href="divergent.html">Divergent Change</a>
-                </li>
-                <li>
-                  <a href="shotgun.html">Shotgun Surgery</a>
-                </li>
-                <li>
-                  <a href="parallel.html">Parallel Inheritance Hierarchies</a>
-                </li>
-              </ul>
-            </li>
-            </ul>
+        </ul>
+        <div class="footer">
+          <p>&copy; 2024 Your Company. All rights reserved.</p>
+        </div>
       </nav>
 
       <!-- Page Content  -->
@@ -113,18 +116,33 @@
 
         <h2>Comments</h2>
         <p>
-            Comments biasanya dibuat dengan niat terbaik, ketika penulis menyadari bahwa kodenya tidak intuitif atau jelas. Dalam kasus seperti itu, comments ibarat deodoran yang menutupi bau amis kode yang bisa diperbaiki. <br>
-            Jika Anda merasa bahwa sebuah fragmen kode tidak dapat dipahami tanpa komentar, cobalah mengubah struktur kode sedemikian rupa sehingga comments tidak diperlukan.
+          Comments biasanya dibuat dengan niat terbaik, ketika penulis menyadari
+          bahwa kodenya tidak intuitif atau jelas. Dalam kasus seperti itu,
+          comments ibarat deodoran yang menutupi bau amis kode yang bisa
+          diperbaiki. <br />
+          Jika Anda merasa bahwa sebuah fragmen kode tidak dapat dipahami tanpa
+          komentar, cobalah mengubah struktur kode sedemikian rupa sehingga
+          comments tidak diperlukan.
         </p>
 
         <h2>Treatment</h2>
         <p>
-            1. Jika komentar dimaksudkan untuk menjelaskan ekspresi kompleks, ekspresi tersebut harus dipecah menjadi subekspresi yang dapat dimengerti <br>
-            - Extract Variable <br>
-            2. Jika komentar menjelaskan suatu bagian kode, bagian ini dapat diubah menjadi metode terpisah <br>
-            - Extract Method <br>
-            3. Jika suatu metode telah diekstraksi, namun komentar masih diperlukan untuk menjelaskan fungsi metode tersebut, berikan nama yang cukup jelas pada metode tersebut <br>
-            - Rename Method <br>
-            4. Jika anda perlu menegaskan aturan tentang keadaan yang diperlukan agar sistem dapat bekerja. <br>
-            - Introduce Assertion <br>
+          1. Jika komentar dimaksudkan untuk menjelaskan ekspresi kompleks,
+          ekspresi tersebut harus dipecah menjadi subekspresi yang dapat
+          dimengerti <br />
+          - Extract Variable <br />
+          2. Jika komentar menjelaskan suatu bagian kode, bagian ini dapat
+          diubah menjadi metode terpisah <br />
+          - Extract Method <br />
+          3. Jika suatu metode telah diekstraksi, namun komentar masih
+          diperlukan untuk menjelaskan fungsi metode tersebut, berikan nama yang
+          cukup jelas pada metode tersebut <br />
+          - Rename Method <br />
+          4. Jika anda perlu menegaskan aturan tentang keadaan yang diperlukan
+          agar sistem dapat bekerja. <br />
+          - Introduce Assertion <br />
         </p>
+      </div>
+    </div>
+  </body>
+</html>

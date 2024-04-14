@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Code Smell</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js"
+      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"
+      integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <!-- Sidebar  -->
+      <nav id="sidebar">
+        <div class="sidebar-header">
+          <h3>Code Refactoring</h3>
+        </div>
+        <ul class="list-unstyled components">
+          <li>
+            <a href="home.html">Home</a>
+          </li>
+          <li>
+            <a
+              href="#pageSubmenu"
+              data-toggle="collapse"
+              aria-expanded="false"
+              class="dropdown-toggle"
+              >Change Preventers</a
+            >
+            <ul class="collapse list-unstyled" id="pageSubmenu">
+              <li>
+                <a href="divergent-change.html">Divergent Change</a>
+              </li>
+              <li>
+                <a href="shotgun-surgery.html">Shotgun Surgery</a>
+              </li>
+              <li>
+                <a href="parallel-inheritanve-hierarchies.html">Parallel Inheritance Hierarchies</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a
+              href="#dispansablesSubmenu"
+              data-toggle="collapse"
+              aria-expanded="false"
+              class="dropdown-toggle"
+              >Dispansables</a
+            >
+            <ul class="collapse list-unstyled" id="dispansablesSubmenu">
+              <li>
+                <a href="comments.html">Comments</a>
+              </li>
+              <li>
+                <a href="duplicate-code.html">Duplicate Code</a>
+              </li>
+              <li>
+                <a href="lazy-class.html">Lazy Class</a>
+              </li>
+              <li>
+                <a href="data-class.html">Data Class</a>
+              </li>
+              <li>
+                <a href="dead-code.html">Dead Code</a>
+              </li>
+              <li>
+                <a href="speculative-generality.html">Speculative Generality</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">
+          <p>&copy; 2024 Your Company. All rights reserved.</p>
+        </div>
+      </nav>
+
+      <!-- Page Content  -->
+      <div id="content">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container-fluid">
+            <label class="hamburger">
+              <input type="checkbox" id="sidebarCollapse" />
+              <svg viewBox="0 0 32 32">
+                <path
+                  class="line line-top-bottom"
+                  d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"
+                ></path>
+                <path class="line" d="M7 16 27 16"></path>
+              </svg>
+            </label>
+          </div>
+        </nav>
+
+        <div class="main-content">
+          <h1 class="title">Code Smell</h1>
+          <p>
+            <b>"Code smell"</b> adalah istilah dalam pengembangan perangkat
+            lunak yang digunakan untuk merujuk pada tanda-tanda atau indikasi
+            bahwa ada masalah dalam desain atau struktur sebuah kode. Mirip
+            dengan bau yang tidak enak dalam kehidupan sehari-hari yang
+            menunjukkan adanya masalah, "code smell" menunjukkan bahwa kode
+            tersebut mungkin perlu diperbaiki atau ditingkatkan. Ini bisa
+            menjadi tanda-tanda seperti pengulangan kode yang berlebihan,
+            kompleksitas yang tidak perlu, fungsi atau metode yang terlalu
+            panjang, penggunaan variabel yang tidak tepat, atau pola desain yang
+            buruk.
+          </p>
+          <p>
+            Penyebab utama code smell bisa bervariasi, mulai dari kurangnya
+            pemahaman terhadap masalah yang dipecahkan, hingga keputusan desain
+            yang tidak optimal, hingga tekanan waktu yang memaksa pengembang
+            untuk mengorbankan kualitas kode. Mendeteksi dan menghilangkan code
+            smell adalah bagian penting dari pemeliharaan kode yang baik dan
+            membantu menjaga kebersihan, keterbacaan, dan keberlanjutan proyek
+            perangkat lunak.
+          </p>
+
+          <div class="line"></div>
+
+          <!-- Change Preventers Content -->
+          <h2>Change Preventers</h2>
+          <p>
+            <b>"Change Preventers"</b> merupakan salah satu jenis kode berbau (code
+            smell) yang mengindikasikan adanya struktur atau pola dalam kode
+            yang menghambat atau menghalangi perubahan. Ini sering kali terjadi
+            ketika kode memiliki ketergantungan yang kuat antara
+            komponen-komponen yang seharusnya saling terpisah, atau ketika kode
+            memiliki banyak kondisi atau logika yang saling terkait secara
+            kompleks. Dibawah ini merupakan bagian-bagian dari Change Preventers:
+          </p>
+          <div class="container">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="card h-auto">
+                  <a style="text-decoration: none; color: black" href="divergent-change.html">
+                    <img class="card-img-top p-3" style="height: 13vw; width: 100%; object-fit: contain" src="assets/divergent-change-01-3x.png" alt="gambar" />
+                    <h6 class="card-title fw-semibold text-center mb-3">Divergent Change</h6>
+                  </a>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="card h-auto">
+                  <a style="text-decoration: none; color: black" href="shotgun-surgery.html">
+                    <img class="card-img-top p-3" style="height: 13vw; width: 100%; object-fit: contain" src="assets/shotgun-surgery-01-3x.png" alt="gambar" />
+                    <h6 class="card-title fw-semibold text-center mb-3">Shotgun Surgery</h6>
+                  </a>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="card h-auto">
+                  <a style="text-decoration: none; color: black" href="parallel-inheritanve-hierarchies.html">
+                    <img class="card-img-top p-3" style="height: 13vw; width: 100%; object-fit: contain" src="assets/parallel-inheritance-hierarchies-01-3x.png" alt="gambar" />
+                    <h6 class="card-title fw-semibold text-center mb-3">Parallel Inheritance Hierarchies</h6>
+                  </a>
+                </div>
+              </div>
+          </div>
+
+          <div class="line"></div>
+
+          <h2>Dispansables</h2>
+          <p>
+            <b>"Dispensables"</b> dalam konteks code smell mengacu pada bagian-bagian dari kode yang tidak diperlukan atau tidak digunakan, tetapi masih tetap ada dalam basis kode. Kode dispensable bisa membingungkan pembaca dan meningkatkan kompleksitas, serta memperlambat proses pengembangan dan pemeliharaan karena pengembang harus meluangkan waktu untuk memahami dan memutuskan apakah bagian-bagian tersebut benar-benar diperlukan atau tidak.
+          </p>
+          <p>Beberapa jenis <b>Dispensables</b> dalam code smell meliputi:</p>
+          <div class="container">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="card h-auto">
+                  <a style="text-decoration: none; color: black" href="comments.html">
+                    <img class="card-img-top p-3" style="height: 13vw; width: 100%; object-fit: contain" src="assets/comments-01.png" alt="gambar" />
+                    <h6 class="card-title fw-semibold text-center mb-3">Comments</h6>
+                  </a>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="card h-auto">
+                  <a style="text-decoration: none; color: black" href="duplicate-code.html">
+                    <img class="card-img-top p-3" style="height: 13vw; width: 100%; object-fit: contain" src="assets/duplicate-code-01.png" alt="gambar" />
+                    <h6 class="card-title fw-semibold text-center mb-3">Duplicate Code</h6>
+                  </a>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="card h-auto">
+                  <a style="text-decoration: none; color: black" href="lazy-class.html">
+                    <img class="card-img-top p-3" style="height: 13vw; width: 100%; object-fit: contain" src="assets/lazy-class-01-3x.png" alt="gambar" />
+                    <h6 class="card-title fw-semibold text-center mb-3">Lazy Class</h6>
+                  </a>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="card h-auto">
+                  <a style="text-decoration: none; color: black" href="data-class.html">
+                    <img class="card-img-top p-3" style="height: 13vw; width: 100%; object-fit: contain" src="assets/data-class-02.png" alt="gambar" />
+                    <h6 class="card-title fw-semibold text-center mb-3">Data Class</h6>
+                  </a>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="card h-auto">
+                  <a style="text-decoration: none; color: black" href="dead-code.html">
+                    <img class="card-img-top p-3" style="height: 13vw; width: 100%; object-fit: contain" src="assets/dead-code-01-3x.png" alt="gambar" />
+                    <h6 class="card-title fw-semibold text-center mb-3">Dead Code</h6>
+                  </a>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="card h-auto">
+                  <a style="text-decoration: none; color: black" href="speculative-generality.html">
+                    <img class="card-img-top p-3" style="height: 13vw; width: 100%; object-fit: contain" src="assets/speculative-generality-01.png" alt="gambar" />
+                    <h6 class="card-title fw-semibold text-center mb-3">Speculative Generality</h6>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="script.js"></script>
+</html>
