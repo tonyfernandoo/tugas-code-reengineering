@@ -11,6 +11,7 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="prism/prism.css" />
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
       integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -54,7 +55,9 @@
                 <a href="shotgun-surgery.html">Shotgun Surgery</a>
               </li>
               <li>
-                <a href="parallel-inheritanve-hierarchies.html">Parallel Inheritance Hierarchies</a>
+                <a href="parallel-inheritanve-hierarchies.html"
+                  >Parallel Inheritance Hierarchies</a
+                >
               </li>
             </ul>
           </li>
@@ -107,23 +110,269 @@
                 <path class="line" d="M7 16 27 16"></path>
               </svg>
             </label>
-            <!-- <button type="button" id="sidebarCollapse" class="btn btn-info">
-              <i class="fas fa-align-left"></i>
-              <span>Toggle Sidebar</span>
-            </button> -->
           </div>
         </nav>
 
-        <h2>Divergent Change</h2>
-        <p>
-            Seringkali modifikasi yang berbeda ini disebabkan oleh struktur program yang buruk atau "pemrograman copypasta".
-        </p>
+        <h1>Divergent Change</h1>
+        <div class="content-image m-4">
+          <img
+            src="assets/divergent-change-01-3x.png"
+            style="height: 13vw; width: 100%; object-fit: contain"
+            alt="Divergent Change"
+          />
+        </div>
+        <br />
+        <div class="sub-section">
+          <ul>
+            <div class="penjelasan">
+              <li><h4>Apa Itu Divergent Change?</h4></li>
+              <p>
+                <b><i>Divergent Change</i></b
+                >, seperti namanya, adalah keadaan di mana sebuah kelas atau
+                modul dalam kode kita mulai berubah secara terpisah, menjauh
+                dari tujuan atau tanggung jawab awalnya. Ini seperti jalan
+                bercabang dalam pengembangan perangkat lunak, di mana perubahan
+                yang seharusnya terkait menjadi terpisah dan bergerak ke arah
+                yang berlawanan.
+              </p>
+              <p>
+                Ketika <b><i>Divergent Change</i></b> terjadi, tidak lagi
+                terdapat alur logis yang konsisten dalam evolusi kode kita.
+                Sebuah entitas kode mungkin akan berubah karena berbagai alasan
+                yang tidak terkait, seperti permintaan fitur baru, perubahan
+                kebijakan, atau perbaikan bug. Hal ini mengakibatkan fragmentasi
+                dan kompleksitas yang tidak terkendali, menghasilkan kode yang
+                sulit dimengerti dan dipelihara.
+              </p>
+              <p>
+                Mengidentifikasi <b><i>Divergent Change</i></b> adalah langkah
+                awal yang penting dalam membersihkan dan merawat basis kode
+                kita. Dengan memahami esensi dari code smell ini, kita dapat
+                memulai perjalanan menuju kode yang lebih bersih, terkelola, dan
+                mudah dipahami.
+              </p>
+            </div>
 
-        <h2>Treatment</h2>
-        <p>
-            1. Pisahkan perilaku class <br>
-            - Extract Class <br>
-            2. Jika class yang berbeda memiliki perilaku yang sama, anda mungkin ingin menggabungkan kelas-kelas tersebut melalui inheritance <br>
-            - Extract Superclass <br>
-            - Extract Subclass
-        </p>
+            <br />
+            <div class="tanda-tanda">
+              <li><h4>Tanda-tanda Divergent Change</h4></li>
+              <p>
+                Bagaimana kita tahu jika kode kita mengalami Divergent Change?
+                Berikut adalah beberapa tanda yang dapat membantu Anda
+                mengidentifikasi keberadaannya:
+              </p>
+              <ol>
+                <li>
+                  <p>
+                    <b>Banyaknya Perubahan:</b> Jika Anda melihat sebuah kelas
+                    atau modul mengalami banyak perubahan dalam periode waktu
+                    yang singkat, ini bisa menjadi tanda Divergent Change.
+                    Perubahan-perubahan tersebut mungkin tidak terkait satu sama
+                    lain dan terjadi karena alasan yang berbeda.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <b>Perubahan yang Tidak Terkait:</b> Divergent Change
+                    terjadi ketika perubahan-perubahan tersebut tidak terkait
+                    dengan satu fitur atau kebutuhan bisnis tertentu. Sebagai
+                    gantinya, mereka mungkin berkaitan dengan permintaan fitur
+                    baru, perubahan kebijakan, atau peningkatan kinerja.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <b>Kesulitan Memahami Kode:</b> Divergent Change dapat
+                    membuat kode menjadi sulit dimengerti. Anda mungkin merasa
+                    kesulitan untuk melacak alur logis dari perubahan-perubahan
+                    tersebut dan memahami dampaknya terhadap kode yang ada.
+                  </p>
+                </li>
+              </ol>
+              <p>
+                Dengan memahami tanda-tanda ini, Anda dapat lebih mudah
+                mengidentifikasi keberadaan Divergent Change dalam kode Anda dan
+                mengambil langkah-langkah untuk mengatasinya.
+              </p>
+            </div>
+            <br />
+            <div class="strategi">
+              <li><h4>Strategi untuk Mengatasi Divergent Change</h4></li>
+              <p>
+                Divergent Change bukan hanya sekadar code smell yang mengganggu,
+                tetapi juga memiliki dampak negatif yang signifikan pada proses
+                pengembangan perangkat lunak. Berikut adalah beberapa dampak
+                negatif yang dapat terjadi:
+              </p>
+              <ol>
+                <li>
+                  <p>
+                    <b>Kompleksitas Kode yang Meningkat:</b> Divergent Change
+                    menyebabkan peningkatan kompleksitas kode dengan
+                    memperkenalkan cabang-cabang yang tidak terkendali dalam
+                    evolusi kode. Hal ini membuat kode menjadi lebih sulit
+                    dimengerti dan dikelola.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <b>Menurunkan Keterbacaan dan Pemahaman Kode:</b> Ketika
+                    kode mengalami Divergent Change, alur logisnya menjadi
+                    terputus dan sulit diikuti. Hal ini membuat kode sulit
+                    dipahami oleh pengembang lain yang harus memelihara atau
+                    berkolaborasi dalam pengembangan.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <b>Memperburuk Kualitas dan Keberlanjutan Kode:</b>
+                    Divergent Change dapat mengarah pada kode yang kurang
+                    berkualitas dan tidak stabil. Kode yang sering berubah
+                    secara terpisah cenderung memiliki lebih banyak bug dan
+                    kesalahan, serta sulit dipelihara dalam jangka panjang.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <b>Meningkatkan Risiko Kesalahan dan Kegagalan:</b>Kode yang
+                    mengalami Divergent Change memiliki risiko yang lebih tinggi
+                    untuk mengalami kesalahan dan kegagalan. Perubahan yang
+                    tidak terkendali dapat menyebabkan efek samping yang tidak
+                    diinginkan atau mengganggu fungsi-fungsi yang ada.
+                  </p>
+                </li>
+              </ol>
+              <p>
+                Dengan memahami dampak negatif dari Divergent Change, kita dapat
+                menyadari pentingnya untuk mengidentifikasi dan mengatasi code
+                smell ini dalam pengembangan perangkat lunak.
+              </p>
+            </div>
+            <br />
+            <div class="contoh-kasus">
+              <li><h4>Contoh Kasus</h4></li>
+              <p>
+                Dalam aplikasi manajemen toko sederhana yang ditulis dalam
+                bahasa pemrograman Java, kita memiliki kelas
+                <b>"Product"</b> yang bertanggung jawab untuk merepresentasikan
+                produk yang dijual di toko. Namun, seiring dengan perkembangan
+                aplikasi, kelas ini mulai mengalami Divergent Change karena
+                berbagai alasan yang berbeda.
+              </p>
+              <p>Mari kita lihat contoh kode untuk kelas <b>"Product"</b>:</p>
+              <h5 style="text-align: center">Before</h5>
+              <div class="container">
+                <div class="box-code">
+                  <pre><code class="language-java">
+public class Product {
+    private String name;
+    private String description;
+    private double price;
+    private List&lt;Review&gt; reviews; // Daftar ulasan produk
+
+    // Konstruktor, getter, dan setter lainnya
+}
+                </code></pre>
+                </div>
+              </div>
+              <br />
+              <p>
+                Kelas <b>"Product"</b> awalnya dibuat dengan atribut dasar
+                seperti nama, deskripsi, dan harga. Namun, seiring waktu, muncul
+                permintaan fitur baru seperti penambahan ulasan produk, yang
+                mengakibatkan kelas ini mengalami banyak perubahan. Setiap kali
+                ada permintaan fitur baru atau perubahan kebijakan, kelas
+                Product harus diubah, menyebabkan fragmentasi dalam evolusi
+                kode. Hal ini membuat kode yang terkait dengan Product sulit
+                dipahami oleh pengembang lain dalam tim karena alur logisnya
+                terputus, menyulitkan prediksi efek dari perubahan yang
+                dilakukan.
+              </p>
+              <br />
+              <p>
+                Kita akan memisahkan tanggung jawab untuk mengelola
+                <b><i>review</i></b> ke dalam kelas terpisah yang disebut
+                <b>"ProductReviews."</b>
+              </p>
+              <h5 style="text-align: center">After</h5>
+
+              <div class="container">
+                <div class="box-code">
+                  <p style="font-weight: bold">Main.java :</p>
+                  <pre><code class="language-java">
+import java.util.List;
+
+public class Product {
+  private String name;
+  private String description;
+  private double price;
+  private ProductReviews reviews; // Objek untuk mengelola ulasan produk
+                  
+// Konstruktor, getter, dan setter lainnya
+                  
+// Method untuk menambah ulasan produk
+public void addReview(Review review) {
+    reviews.addReview(review);
+  } 
+                  
+// Method lainnya yang terkait dengan produk
+}
+
+class ProductReviews {
+  private List
+}
+                </code></pre>
+                </div>
+              </div>
+              <br />
+              <div class="container">
+                <div class="box-code">
+                  <p style="font-weight: bold">ProductReviews.java:</p>
+                  <pre><code class="language-java">
+import java.util.ArrayList;
+import java.util.List;
+
+public class ProductReviews {
+    private List
+}                  
+                </code></pre>
+                </div>
+              </div>
+              <br />
+              <div class="container">
+                <div class="box-code">
+                  <p style="font-weight: bold">Review.java:</p>
+                  <pre><code class="language-java">
+import java.util.ArrayList;
+import java.util.List;
+
+public class Review {
+    private String reviewerName;
+    private String comment;
+    private int rating;
+
+    // Konstruktor, getter, dan setter lainnya
+}               
+                </code></pre>
+                </div>
+              </div>
+            </div>
+            <br />
+            <br>
+              <p>
+                Dengan melakukan extract class, kita memisahkan tanggung jawab
+                untuk mengelola ulasan produk ke dalam kelas <b>"ProductReviews."</b>,
+                yang membuat kelas <b>"Product"</b> tetap fokus pada tanggung jawab
+                utamanya, yaitu merepresentasikan produk yang dijual di toko.
+                Ini membantu mengatasi <b><i>Divergent Change</i></b> dengan mengelompokkan
+                perubahan-perubahan terkait dengan ulasan produk ke dalam satu
+                tempat, meningkatkan keterbacaan dan pemeliharaan kode.
+              </p>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="prism/prism.js"></script>
+  </body>
+</html>

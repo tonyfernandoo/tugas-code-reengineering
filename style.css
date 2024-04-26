@@ -62,6 +62,7 @@ a:focus {
   background: #40679E;
   color: #fff;
   transition: all 0.3s;
+  position: relative;
 }
 
 #sidebar.active {
@@ -189,8 +190,17 @@ a.article:hover {
   padding: 20px;
   min-height: 100vh;
   transition: all 0.3s;
+  text-align: justify;
 }
 
+#content h1{
+  text-align: center;
+  font-size: 48px;
+}
+
+#content h2{
+  text-align: center;
+}
 
 .main-content p{
   text-align: justify;
@@ -212,6 +222,31 @@ a.article:hover {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
 }
 
+.content-image img{
+  height: 100%; 
+  width: 100%; 
+  object-fit: contain
+}
+
+.sub-section ol{
+  color: #999;
+}
+
+.container{
+  display: flex;
+  justify-content: center;
+}
+
+.box-code{
+  width: 700px;
+  height: 300px;
+  margin: 30px 0 30px 0;
+}
+
+pre.language-java{
+  width: 100%;
+  height: 100%;
+}
 /* ---------------------------------------------------
     MEDIAQUERIES
 ----------------------------------------------------- */
@@ -243,5 +278,8 @@ a.article:hover {
   }
   #sidebarCollapse span {
     display: none;
+  }
+  .box-code{
+    width: 97%;
   }
 }
