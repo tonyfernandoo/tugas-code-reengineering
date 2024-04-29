@@ -127,3 +127,208 @@
             - Remove Parameter <br>
             - Menghapus fields yang tidak digunakan
         </p>
+        <br>
+        <div class="contoh-kasus">
+          <li><h4>Contoh Kasus</h4></li>
+          <p>
+            Salah satu prinsip extreme programming (XP) yang terkenal adalah You aren’t gonna need it (YAGNI). 
+            Disarankan oleh XP untuk tidak menambahkan fungsionalitas sampai benar-benar diperlukan.
+          </p>
+          <p>Contohnya, pada package before.</p>
+          <p>Requirement dari client adalah Price bisa memiliki Currency antara IDR atau USD.</p>
+          <p>Programmer berspekulasi bahwa IDR dan USD adalah kurs jenis tradisional, nantinya akan ada kurs jenis digital seperti bitcoin. 
+            Oleh karena itu, Programmer membuat hirarki seperti di dalam package before.</p>
+          <h5 style="text-align: center">Before</h5>
+          <div class="container">
+            <div class="box-code">
+              <p style="font-weight: bold">Currency.java :</p>
+              <pre><code class="language-java">
+package fowler.dispensables.speculative_generality.before;
+
+public abstract class Currency {
+	public abstract String getCode();
+}
+            </code></pre>
+            </div>
+          </div>
+          <br>
+          <div class="container">
+            <div class="box-code">
+              <p style="font-weight: bold">Digital.java :</p>
+              <pre><code class="language-java">
+package fowler.dispensables.speculative_generality.before;
+
+public abstract class Digital extends Currency {
+
+}
+            </code></pre>
+            </div>
+          </div>
+          <br />
+          <div class="container">
+            <div class="box-code">
+              <p style="font-weight: bold">IDR.java :</p>
+              <pre><code class="language-java">
+package fowler.dispensables.speculative_generality.before;
+
+public class IDR extends Traditional {
+	@Override
+	public String getCode() {
+		return "IDR";
+	}
+}
+            </code></pre>
+            </div>
+          </div>
+        <br />
+        <div class="container">
+          <div class="box-code">
+            <p style="font-weight: bold">Price.java :</p>
+            <pre><code class="language-java">
+package fowler.dispensables.speculative_generality.before;
+
+public class Price {
+	int value;
+	Currency currency;
+	
+	public Price(int value, Currency currency) {
+		this.value = value;
+		this.currency = currency;
+	}
+	
+	public int getValue() {
+		return value;
+	}
+	public void setValue(int value) {
+		this.value = value;
+	}
+	public Currency getCurrency() {
+		return currency;
+	}
+	public void setCurrency(Currency currency) {
+		this.currency = currency;
+	}
+}
+          </code></pre>
+          </div>
+        </div>
+      <br />
+      <div class="container">
+        <div class="box-code">
+          <p style="font-weight: bold">Traditional.java :</p>
+          <pre><code class="language-java">
+package fowler.dispensables.speculative_generality.before;
+
+public abstract class Traditional extends Currency {
+
+}
+      </code></pre>
+      </div>
+    </div>
+    <br />
+    <div class="container">
+      <div class="box-code">
+        <p style="font-weight: bold">USD.java :</p>
+        <pre><code class="language-java">
+        package fowler.dispensables.speculative_generality.before;
+
+        public class USD extends Traditional {
+          @Override
+          public String getCode() {
+            return "USD";
+          }
+        }
+    </code></pre>
+    </div>
+  </div>
+  <br />
+
+          <h5 style="text-align: center">After</h5>
+
+          <div class="container">
+            <div class="box-code">
+              <p style="font-weight: bold">Currency.java :</p>
+              <pre><code class="language-java">
+package fowler.dispensables.speculative_generality.after;
+
+public abstract class Currency {
+	public abstract String getCode();
+}
+            </code></pre>
+            </div>
+          </div>
+          <br />
+          <div class="container">
+            <div class="box-code">
+              <p style="font-weight: bold">IDR.java :</p>
+              <pre><code class="language-java">
+package fowler.dispensables.speculative_generality.after;
+
+public class IDR extends Currency {
+	
+	@Override
+	public String getCode() {
+		return "IDR";
+	}
+}
+            </code></pre>
+            </div>
+          </div>
+          <br />
+          <div class="container">
+            <div class="box-code">
+              <p style="font-weight: bold">Price.java :</p>
+              <pre><code class="language-java">
+package fowler.dispensables.speculative_generality.after;
+
+public class Price {
+	int value;
+	Currency currency;
+	
+	public Price(int value, Currency currency) {
+		this.value = value;
+		this.currency = currency;
+	}
+	
+	public int getValue() {
+		return value;
+	}
+	public void setValue(int value) {
+		this.value = value;
+	}
+	public Currency getCurrency() {
+		return currency;
+	}
+	public void setCurrency(Currency currency) {
+		this.currency = currency;
+	}
+}
+            </code></pre>
+            </div>
+          </div>
+          <br />
+          <div class="container">
+            <div class="box-code">
+              <p style="font-weight: bold">USD.java :</p>
+              <pre><code class="language-java">
+package fowler.dispensables.speculative_generality.after;
+
+public class USD extends Currency {
+
+	@Override
+	public String getCode() {
+		return "USD";
+	}
+}
+            </code></pre>
+            </div>
+          </div>
+          <br />
+          <br>
+          <p>Dilakukan Collapse Hierarchy. Class Traditional dan Digital dihapus. class USD dan IDR menjadi turunan langsung dari class Currency.</p>
+        </div>
+      </div>
+    </div>
+
+        <script src="script.js"></script>
+        <script src="prism/prism.js"></script>

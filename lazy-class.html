@@ -126,3 +126,92 @@
             2. Subkelas dengan sedikit fungsi <br>
             - Collapse Hierarchy <br>
         </p>
+        <br>
+        <div class="contoh-kasus">
+          <li><h4>Contoh Kasus</h4></li>
+          <p>
+            Lazy class bisa saja terjadi karena refactoring. Awalnya class ini memiliki fungsi yang banyak.
+            Namun, satu per satu dipindahkan ke class lain karena pertimbangan tertentu.
+          </p>
+          <p>Pada contoh di PriceValidator.java. Class hanya memiliki satu buah fungsi untuk validasi harga.</p>
+          <h5 style="text-align: center">Before</h5>
+          <div class="container">
+            <div class="box-code">
+              <p style="font-weight: bold">Price.java :</p>
+              <pre><code class="language-java">
+package fowler.dispensables.lazy_class.before;
+
+public class Price {
+	private int value;
+
+	public Price(int value) throws Exception {
+		if(!PriceValidator.validate(value)) {
+			throw new Exception("price not valid");
+		}
+		this.value = value;
+	}
+
+	public int getValue() {
+		return value;
+	}
+}
+            </code></pre>
+            </div>
+          </div>
+          <br>
+          <div class="container">
+            <div class="box-code">
+              <p style="font-weight: bold">PriceValidator.java</p>
+              <pre><code class="language-java">
+package fowler.dispensables.lazy_class.before;
+
+public class PriceValidator {
+	public static boolean validate(int value){
+		return value >= 0;
+	}
+}          
+            </code></pre>
+            </div>
+          </div>
+          <br />
+          
+          <h5 style="text-align: center">After</h5>
+
+          <div class="container">
+            <div class="box-code">
+              <p style="font-weight: bold">Price.java :</p>
+              <pre><code class="language-java">
+package fowler.dispensables.lazy_class.after;
+
+public class Price {
+	private int value;
+	
+	public Price(int value) throws Exception {
+		if(!isPriceValid(value)) {
+			throw new Exception("price not valid");
+		}
+		
+		this.value = value;
+	}
+
+	private boolean isPriceValid(int value){
+		return value >= 0;
+	}
+	
+	public int getValue() {
+		return value;
+	}
+}
+            </code></pre>
+            </div>
+          </div>
+          <br />
+          <br>
+          <p>Fungsi validate dipindahkan ke class Price.java kemudian diberi nama yang lebih sesuai untuk class Price: isPriceValid. 
+            Setelah dipindahkan, class PriceValidator bisa dihapus.</p>
+        </div>    
+      </div>
+    </div>
+
+        <script src="script.js"></script>
+        <script src="prism/prism.js"></script>

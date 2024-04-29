@@ -129,3 +129,89 @@
             3. Untuk menghapus parameter yang tidak diperlukan <br>
             - Remove Parameter <br>
         </p>
+        <br>
+        <div class="contoh-kasus">
+          <li><h4>Contoh Kasus</h4></li>
+          <p>
+            Awalnya requirement dari client adalah: diskon diberikan 10% bila harga kurang dari 10.000, 
+            jika lebih, diskon 20%. Terbentuklah code berikut:
+          </p>
+          <h5 style="text-align: center">Before</h5>
+          <div class="container">
+            <div class="box-code">
+              <p style="font-weight: bold"></p>
+              <pre><code class="language-java">
+public double calculate(double price, boolean isDiscount){
+  double discountPrice = 0;
+
+  if(isDiscount){
+    if(price < 10000){
+      discountPrice = price * 0.1;
+    } else {
+      discountPrice = price * 0.2;
+    }
+  }
+
+  return price - discountPrice;
+}
+            </code></pre>
+            </div>
+          </div>
+          <br>
+          <p>Tiba-tiba, requirement dari client berubah. Client meminta diskon diketok rata 15%.</p>
+          <p>Programmer tidak menghapus if yang pertama.
+            Ia langsung menambahkan di bagian bawah sebelum return. Secara requirement, ini tidak masalah. Diskon akan selalu 15%.</p>
+          <br>
+          <div class="container">
+            <div class="box-code">
+              <p style="font-weight: bold"></p>
+              <pre><code class="language-java">
+public double calculate(double price, boolean isDiscount){
+  double discountPrice = 0;
+
+  if(isDiscount){
+    if(price < 10000){
+      discountPrice = price * 0.1;
+    } else {
+      discountPrice = price * 0.2;
+    }
+  }
+
+  if(isDiscount)
+    discountPrice = price * 0.15;
+  return price - discountPrice;
+}
+            </code></pre>
+            </div>
+          </div>
+          <br />
+          
+          <h5 style="text-align: center">After</h5>
+
+          <div class="container">
+            <div class="box-code">
+              <p style="font-weight: bold">PriceCalculator.java :</p>
+              <pre><code class="language-java">
+package fowler.dispensables.dead_code.after;
+
+public class PriceCalculator {
+	public double calculate(double price, boolean isDiscount){
+		double discountPrice = 0;
+	
+		if(isDiscount) discountPrice = price * 0.15;
+		
+		return price - discountPrice;
+	}
+}
+            </code></pre>
+            </div>
+          </div>
+          <br />
+          <br>
+          <p>Variabel discountPrice akan selalu ditimpa di line of code selanjutnya. Sehingga bagian yang tidak penting aman untuk dibuang.</p>
+        </div>
+      </div>
+    </div>
+
+        <script src="script.js"></script>
+        <script src="prism/prism.js"></script>
