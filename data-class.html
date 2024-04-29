@@ -114,25 +114,147 @@
           </div>
         </nav>
 
-        <h2>Data</h2>
-        <p>
-            Data class mengacu pada kelas yang hanya berisi bidang dan metode kasar untuk mengaksesnya. Ini hanyalah wadah untuk data yang digunakan oleh kelas lain. Kelas-kelas ini tidak berisi fungsionalitas tambahan apa pun dan tidak dapat beroperasi secara independen pada data yang dimilikinya.
-        </p>
+        <h1>Data Class</h1>
+        <div class="content-image m-4">
+          <img
+            src="assets/data-class-01.png"
+            style="height: 13vw; width: 100%; object-fit: contain"
+            alt="Divergent Change"
+          />
+        </div>
+        <br />
+        <div class="sub-section">
+          <ul>
+            <div class="penjelasan">
+              <li><h4>Apa Itu Data Class?</h4></li>
+              <p>
+                <b><i>Data Class</i></b
+                >, merujuk pada kelas dalam sebuah program yang kebanyakan hanya 
+                berisi properti atau data tanpa adanya logika bisnis atau fungsi 
+                yang signifikan. Dalam konteks code smell, keberadaan Data Class 
+                menunjukkan bahwa kelas tersebut mungkin tidak memberikan nilai 
+                tambah yang cukup signifikan dalam struktur perangkat lunak.
+              </p>
+              <p>
+                Kehadiran <b><i>Data Class</i></b> dalam kode sumber dapat mengakibatkan 
+                kompleksitas yang tidak perlu dan mempersulit pemeliharaan serta 
+                pengembangan lebih lanjut dari aplikasi. Selain itu, mereka dapat menjadi 
+                tanda bahwa desain perangkat lunak Anda perlu direfaktorisasi untuk 
+                mengurangi redundansi dan meningkatkan kohesi antar kelas.
+              </p>
+              <p>
+                Dengan memahami <b><i>Data Class</i></b>,  Anda dapat mengidentifikasi 
+                pola-pola tersebut dalam kode sumber Anda dan mengambil langkah-langkah 
+                yang diperlukan untuk meningkatkan kebersihan serta efisiensi dari struktur 
+                perangkat lunak yang Anda kembangkan.
+              </p>
+            </div>
 
-        <h2>Treatment</h2>
-        <p>
-            1. Jika suatu kelas berisi bidang publik <br>
-            - Encapsulate Field <br>
-            2. Untuk data yang disimpan dalam koleksi (seperti arrays) <br>
-            - Encapsulate Collection <br>
-            3. Review client code yang menggunakan class. Di dalamnya, anda mungkin menemukan fungsionalitas yang lebih baik ditempatkan di kelas data itu sendiri <br>
-            - Move Method <br>
-            - Extract Method <br>
-            4. Setelah kelas diisi dengan metode yang dipikirkan dengan matang, anda mungkin ingin membuang metode akses data lama yang memberikan akses terlalu luas ke class data <br>
-            - Remove Setting Method <br>
-            - Hide Method <br>
-        </p>
-        <br>
+            <br />
+            <div class="tanda-tanda">
+              <li><h4>Tanda-tanda Data Class</h4></li>
+              <p>
+                Bagaimana kita tahu jika kode kita terdapat adanya Data Class?
+                Berikut adalah beberapa tanda yang dapat membantu Anda
+                mengidentifikasi keberadaannya:
+              </p>
+              <ol>
+                <li>
+                  <p>
+                    <b>Hanya Berisi Properti:</b> Jika sebuah kelas hanya terdiri 
+                    dari beberapa properti tanpa adanya logika atau perilaku tambahan 
+                    yang terkait, ini bisa menjadi indikasi bahwa kelas tersebut adalah 
+                    Data Class.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <b>Tidak Ada Logika Bisnis:</b> Jika kelas hanya berfungsi sebagai 
+                    wadah untuk data tanpa melakukan operasi yang berhubungan dengan 
+                    bisnis atau domain aplikasi, ini bisa menjadi tanda bahwa kelas 
+                    tersebut adalah Data Class.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <b>Tidak Ada Ketergantungan:</b> Jika kelas tersebut memiliki 
+                    ketergantungan yang minim atau tidak signifikan terhadap kelas 
+                    lain dalam proyek, pertimbangkan apakah kelas tersebut benar-benar 
+                    diperlukan atau bisa digabungkan dengan kelas lain yang lebih relevan. 
+                    Ketergantungan yang minim bisa menjadi indikasi bahwa kelas tersebut 
+                    hanya berfungsi sebagai Data Class.
+                  </p>
+                </li>
+              </ol>
+              <p>
+                Dengan memperhatikan tanda-tanda ini, Anda dapat mengidentifikasi keberadaan 
+                Data Class dalam kode sumber Anda dan mengambil langkah-langkah yang diperlukan 
+                untuk meningkatkan kebersihan dan efektivitas dari struktur perangkat lunak yang 
+                Anda kembangkan.
+              </p>
+            </div>
+            <br />
+            <div class="strategi">
+              <li><h4>Strategi untuk Mengatasi Data Class</h4></li>
+              <p>
+                Mengatasi Data Class dalam kode sumber merupakan langkah penting 
+                untuk meningkatkan kebersihan, kohesi, dan efektivitas dari proyek 
+                perangkat lunak Anda. Berikut adalah beberapa strategi yang dapat 
+                Anda terapkan untuk mengatasi Data Class:
+              </p>
+              <ol>
+                <li>
+                  <p>
+                    <b>Refaktorisasi Kode:</b> Langkah pertama dalam mengatasi Data 
+                    Class adalah dengan melakukan refaktorisasi kode. Tinjau ulang 
+                    kelas-kelas yang diidentifikasi sebagai Data Class dan pertimbangkan 
+                    untuk menggabungkannya dengan kelas lain yang relevan atau memindahkan 
+                    logika bisnis yang terkait ke dalam kelas yang lebih sesuai. Dengan 
+                    cara ini, Anda dapat mengurangi kompleksitas kode dan meningkatkan 
+                    kohesi antar kelas.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <b>Penerapan Metode-Metode Operasi:</b> Jika sebuah kelas hanya berisi 
+                    properti tanpa adanya operasi atau logika tambahan, pertimbangkan untuk 
+                    menambahkan metode-metode operasi yang relevan ke dalam kelas tersebut. 
+                    Misalnya, Anda dapat menambahkan metode untuk memproses atau memanipulasi 
+                    data yang disimpan dalam kelas, sehingga kelas tersebut tidak hanya berfungsi 
+                    sebagai wadah untuk data tetapi juga memiliki fungsionalitas yang berguna.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <b>Pemisahan Fungsionalitas:</b>
+                    Jika sebuah kelas memiliki tanggung jawab yang berlebihan atau mencoba 
+                    melakukan terlalu banyak hal sekaligus, pertimbangkan untuk memisahkan 
+                    fungsionalitasnya ke dalam kelas-kelas yang lebih spesifik. Dengan 
+                    memisahkan fungsionalitas yang berbeda ke dalam kelas-kelas yang lebih 
+                    kecil dan terfokus, Anda dapat meningkatkan modularitas dan keterbacaan 
+                    kode Anda.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <b>Penggunaan Desain Berorientasi Objek yang Lebih Baik:</b>
+                    Evaluasi desain berorientasi objek dari proyek Anda dan pastikan bahwa 
+                    kelas-kelas Anda memiliki tanggung jawab yang jelas dan terdefinisi dengan 
+                    baik. Gunakan prinsip-prinsip desain berorientasi objek seperti SOLID untuk 
+                    memastikan bahwa setiap kelas memiliki satu tujuan yang jelas dan memenuhi 
+                    prinsip-prinsip desain yang baik.
+                  </p>
+                </li>
+              </ol>
+              <p>
+                Dengan menerapkan strategi ini, Anda dapat mengatasi Data Class dalam kode sumber 
+                Anda dan meningkatkan kebersihan serta efektivitas dari proyek perangkat lunak yang 
+                Anda kembangkan. Teruslah memperhatikan pola-pola yang tidak efisien dalam kode Anda 
+                dan berusaha untuk memperbaiki mereka demi mencapai struktur kode yang lebih baik dan 
+                lebih mudah dipelihara.
+              </p>
+            </div>
+            <br />
         <div class="contoh-kasus">
           <li><h4>Contoh Kasus</h4></li>
           <p>

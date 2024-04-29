@@ -114,19 +114,143 @@
           </div>
         </nav>
 
-        <h2>Lazy Class</h2>
-        <p>
-            Sebuah kelas dirancang untuk berfungsi penuh tetapi setelah beberapa pemfaktoran ulang, kelas tersebut menjadi sangat kecil.
-        </p>
+        <h1>Lazy Class</h1>
+        <div class="content-image m-4">
+          <img
+            src="assets/lazy-class-01.png"
+            style="height: 13vw; width: 100%; object-fit: contain"
+            alt="Divergent Change"
+          />
+        </div>
+        <br />
+        <div class="sub-section">
+          <ul>
+            <div class="penjelasan">
+              <li><h4>Apa Itu Lazy Class?</h4></li>
+              <p>
+                <b><i>Lazy Class</i></b
+                >, adalah sebuah konsep dalam pengembangan perangkat lunak yang 
+                mengacu pada kelas atau objek yang memberikan kontribusi yang 
+                minim atau tidak signifikan terhadap fungsionalitas keseluruhan 
+                aplikasi. Dalam konteks code smell, Lazy Class merupakan salah 
+                satu pola yang menandakan adanya kode yang tidak efisien atau 
+                kurang terorganisir dengan baik.
+              </p>
+              <p>
+                Keberadaan <b><i>Lazy Class</i></b> dalam sebuah proyek perangkat 
+                lunak dapat mengakibatkan kompleksitas yang tidak perlu, membingungkan 
+                pembaca kode, dan menghambat pemeliharaan serta pengembangan lebih 
+                lanjut dari aplikasi.
+              </p>
+              <p>
+                Mengidentifikasi <b><i>Lazy Class</i></b> dalam kode sumber, pengembang 
+                dapat meningkatkan kualitas dan kebersihan dari struktur perangkat lunak 
+                mereka, memfasilitasi pemeliharaan yang lebih mudah, dan mempercepat proses 
+                pengembangan secara keseluruhan.
+              </p>
+            </div>
 
-        <h2>Treatment</h2>
-        <p>
-            1. Komponen yang hampir tidak berguna <br>
-            - Inline Class <br>
-            2. Subkelas dengan sedikit fungsi <br>
-            - Collapse Hierarchy <br>
-        </p>
-        <br>
+            <br />
+            <div class="tanda-tanda">
+              <li><h4>Tanda-tanda Lazy Class</h4></li>
+              <p>
+                Bagaimana kita tahu jika kode kita terdapat adanya Lazy Class?
+                Berikut adalah beberapa tanda yang dapat membantu Anda
+                mengidentifikasi keberadaannya:
+              </p>
+              <ol>
+                <li>
+                  <p>
+                    <b>Kelas dengan Sedikit Metode:</b> Ketika sebuah kelas hanya 
+                    memiliki satu atau dua metode yang tidak melakukan banyak hal 
+                    atau bahkan tidak digunakan sama sekali, ini mungkin menjadi 
+                    indikasi adanya Lazy Class.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <b>Kelas yang Hanya Menjadi Tempat Penyimpanan Data:</b> Jika 
+                    sebuah kelas hanya berfungsi sebagai wadah untuk menyimpan data 
+                    tanpa adanya perilaku atau fungsionalitas tambahan yang signifikan, 
+                    ini bisa menjadi tanda bahwa kelas tersebut merupakan Lazy Class.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <b>Kelas dengan Ketergantungan Minim:</b>  Jika sebuah kelas memiliki 
+                    sedikit atau bahkan tidak ada ketergantungan pada kelas lain di dalam 
+                    proyek, ini bisa menjadi tanda bahwa kelas tersebut tidak berperan penting 
+                    dalam sistem secara keseluruhan.
+                  </p>
+                </li>
+              </ol>
+              <p>
+                Dengan memahami tanda-tanda ini, Anda dapat lebih mudah
+                mengidentifikasi keberadaan Lazy Class dalam kode Anda dan
+                mengambil langkah-langkah untuk mengatasinya.
+              </p>
+            </div>
+            <br />
+            <div class="strategi">
+              <li><h4>Strategi untuk Mengatasi Lazy Class</h4></li>
+              <p>
+                Mengatasi Lazy Class merupakan langkah penting dalam meningkatkan 
+                kebersihan dan efisiensi dari kode sumber Anda. Berikut adalah 
+                beberapa strategi yang dapat Anda terapkan untuk mengatasi 
+                Lazy Class dalam proyek perangkat lunak Anda:
+              </p>
+              <ol>
+                <li>
+                  <p>
+                    <b>Refaktorisasi Kode:</b> Salah satu pendekatan utama untuk 
+                    mengatasi Lazy Class adalah dengan melakukan refaktorisasi kode. 
+                    Tinjau kembali kelas-kelas yang diidentifikasi sebagai Lazy Class 
+                    dan pertimbangkan untuk menggabungkannya dengan kelas lain yang 
+                    terkait atau memindahkan fungsionalitasnya ke kelas yang lebih relevan. 
+                    Dengan melakukan refaktorisasi, Anda dapat menyederhanakan struktur 
+                    kode dan menghilangkan redundansi yang tidak perlu.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <b>Analisis Ketergantungan:</b> Lakukan analisis mendalam terhadap 
+                    ketergantungan antar kelas dalam proyek Anda. Identifikasi kelas-kelas 
+                    yang memiliki ketergantungan minimal atau tidak signifikan terhadap kelas 
+                    lainnya, dan evaluasi apakah kelas-kelas tersebut benar-benar diperlukan. 
+                    Jika tidak, pertimbangkan untuk menghapus atau mengonsolidasikan kelas-kelas 
+                    tersebut untuk mengurangi kompleksitas kode.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <b>Uji Kode:</b>
+                    Sebelum melakukan perubahan besar pada kode, pastikan untuk menguji perubahan 
+                    tersebut secara menyeluruh. Buat unit tes yang mencakup skenario pengujian 
+                    untuk memvalidasi perubahan yang Anda buat, dan pastikan tidak ada perubahan 
+                    yang merusak fungsionalitas aplikasi. Pengujian yang cermat akan membantu memastikan 
+                    bahwa setiap perubahan yang Anda buat tidak menyebabkan masalah baru dalam proyek.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <b>Gunakan Alat Bantu:</b>Manfaatkan alat bantu seperti linter kode atau 
+                    perangkat lunak analisis statik untuk membantu mengidentifikasi Lazy Class 
+                    dalam kode sumber Anda. Alat-alat ini dapat memberikan wawasan tambahan 
+                    tentang struktur kode dan memberikan rekomendasi untuk perbaikan. Namun, 
+                    selalu penting untuk melakukan peninjauan manual terhadap hasil analisis 
+                    alat bantu untuk memastikan keakuratan dan relevansinya.
+                  </p>
+                </li>
+              </ol>
+              <p>
+                Dengan menerapkan strategi ini, Anda dapat mengatasi Lazy Class dalam kode 
+                sumber Anda dan meningkatkan kebersihan serta efisiensi dari proyek perangkat 
+                lunak yang Anda kembangkan. Teruslah memperhatikan kode Anda dan berusaha untuk 
+                memperbaiki pola-pola yang tidak efisien atau tidak perlu demi mencapai struktur 
+                kode yang lebih baik dan lebih mudah dipelihara.
+              </p>
+            </div>
+            <br />
         <div class="contoh-kasus">
           <li><h4>Contoh Kasus</h4></li>
           <p>

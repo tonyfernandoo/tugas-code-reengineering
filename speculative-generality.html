@@ -110,24 +110,142 @@
           </div>
         </nav>
 
-        <h2>Speculative Generality</h2>
-        <p>
-            Terkadang kode dibuat “just in case” untuk mendukung antisipasi fitur-fitur di masa depan yang tidak pernah diimplementasikan. Akibatnya, kode menjadi sulit untuk dipahami dan didukung.
-        </p>
+        <h1>Speculative Generality</h1>
+        <div class="content-image m-4">
+          <img
+            src="assets/speculative-generality-01.png"
+            style="height: 13vw; width: 100%; object-fit: contain"
+            alt="Divergent Change"
+          />
+        </div>
+        <br />
+        <div class="sub-section">
+          <ul>
+            <div class="penjelasan">
+              <li><h4>Apa Itu Speculative Generality?</h4></li>
+              <p>
+                <b><i>Speculative Generality</i></b
+                >, adalah salah satu jenis code smell yang terjadi ketika terdapat 
+                kelas, modul, atau fungsi dalam sebuah program yang dirancang untuk 
+                menangani banyak kasus yang mungkin terjadi di masa depan, namun pada 
+                kenyataannya, kebutuhan tersebut tidak pernah muncul atau terjadi. 
+                Dalam kata lain, Speculative Generality terjadi ketika sebuah komponen 
+                perangkat lunak lebih kompleks dari yang seharusnya, karena mencoba 
+                memprediksi kebutuhan yang mungkin muncul di masa mendatang, tanpa 
+                adanya bukti konkret bahwa kebutuhan tersebut akan muncul.
+              </p>
+              <p>
+                Keberadaan <b><i>Speculative Generality</i></b> dapat mengakibatkan 
+                kompleksitas yang tidak perlu dalam kode sumber, meningkatkan risiko 
+                kesalahan, dan membuat pemeliharaan kode menjadi lebih sulit. Selain 
+                itu, komponen perangkat lunak yang terlalu generik atau umum juga 
+                dapat sulit dipahami oleh pengembang baru atau pengembang yang tidak 
+                terlibat dalam pengembangan awalnya.
+              </p>
+              <p>
+                Dengan memahami <b><i>Speculative Generality</i></b>, pengembang dapat 
+                lebih berhati-hati dalam merancang komponen perangkat lunak dan menghindari 
+                jebakan kompleksitas yang tidak perlu.
+              </p>
+            </div>
 
-        <h2>Treatment</h2>
-        <p>
-            1. Menghapus kelas abstrak yang tidak digunakan <br>
-            - Collapse Hierarchy <br>
-            2. Menghilangkan pendelegasian fungsionalitas yang tidak perlu ke kelas lain <br>
-            - Inline Class <br>
-            3. Menghilangkan metode yang tidak digunakan <br>
-            - Inline Method <br>
-            4. Metode dengan parameter yang tidak digunakan <br>
-            - Remove Parameter <br>
-            - Menghapus fields yang tidak digunakan
-        </p>
-        <br>
+            <br />
+            <div class="tanda-tanda">
+              <li><h4>Tanda-tanda Speculative Generality</h4></li>
+              <p>
+                Bagaimana kita tahu jika kode kita terdapat adanya Speculative Generality?
+                Berikut adalah beberapa tanda yang dapat membantu Anda
+                mengidentifikasi keberadaannya:
+              </p>
+              <ol>
+                <li>
+                  <p>
+                    <b>Kelas atau Modul yang Terlalu Umum:</b> Perhatikan kelas atau modul 
+                    yang merangkum banyak kasus yang mungkin terjadi di masa depan, namun 
+                    pada kenyataannya, hanya sebagian kecil dari kasus tersebut yang terjadi. 
+                    Contoh kelas atau modul seperti ini sering kali memiliki banyak opsi 
+                    parameter atau metode yang tidak selalu digunakan dalam setiap kasus penggunaan.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <b>Fitur atau Fungsionalitas yang Tidak Digunakan:</b> Tinjau fitur atau 
+                    fungsionalitas yang telah dirancang untuk menangani situasi yang belum 
+                    pernah terjadi atau kebutuhan yang belum tentu muncul. Jika fitur-fitur 
+                    ini jarang digunakan atau bahkan tidak pernah dipanggil, mungkin ada 
+                    tanda Speculative Generality.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <b>Komponen yang Sulit Dipahami:</b> Jika terdapat kelas atau modul yang 
+                    terlalu kompleks atau sulit dipahami karena mencoba menangani banyak 
+                    kasus yang mungkin terjadi di masa depan, ini bisa menjadi tanda Speculative 
+                    Generality. Kompleksitas yang berlebihan dalam desain sering kali menunjukkan 
+                    adanya upaya untuk memprediksi kebutuhan yang belum tentu muncul.
+                  </p>
+                </li>
+              </ol>
+              <p>
+                Dengan memperhatikan tanda-tanda ini, Anda dapat mengidentifikasi Speculative Generality 
+                dalam kode sumber Anda dan mengambil langkah-langkah yang diperlukan untuk membersihkannya. 
+                Dengan mempertahankan kode yang bersih dan efisien, Anda dapat meningkatkan keterbacaan, 
+                pemeliharaan, dan skalabilitas dari proyek perangkat lunak Anda.
+              </p>
+            </div>
+            <br />
+            <div class="strategi">
+              <li><h4>Strategi untuk Mengatasi Speculative Generality</h4></li>
+              <p>
+                Mengatasi Speculative Generality dalam kode sumber merupakan langkah 
+                penting untuk menjaga kebersihan, keterbacaan, dan kualitas dari proyek 
+                perangkat lunak Anda. Berikut adalah beberapa strategi yang dapat Anda 
+                terapkan untuk mengatasi Speculative Generality:
+              </p>
+              <ol>
+                <li>
+                  <p>
+                    <b>Kembangkan dengan Keperluan Saat Ini:</b> Fokuskan perancangan 
+                    dan implementasi kelas atau modul pada kebutuhan saat ini, bukan 
+                    pada spekulasi tentang apa yang mungkin diperlukan di masa mendatang. 
+                    Hindari menambahkan fitur atau fungsionalitas yang tidak diperlukan 
+                    saat ini dan tetapkan prinsip bahwa "tidak ada spekulasi tanpa bukti".
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <b>Refaktorisasi Kode yang Terlalu Umum:</b> Tinjau kembali kelas atau 
+                    modul yang terlalu umum dan refaktorlah agar menjadi lebih spesifik 
+                    sesuai dengan kebutuhan saat ini. Pisahkan fungsionalitas yang tidak 
+                    relevan atau jarang digunakan ke dalam kelas atau modul yang terpisah, 
+                    atau hapuslah sepenuhnya jika tidak diperlukan.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <b>Fokus pada Keterbacaan dan Keterartikan:</b>
+                    Desainlah kelas atau modul dengan fokus pada keterbacaan dan keterartikan. 
+                    Buatlah kode yang mudah dipahami dan mudah dimodifikasi oleh pengembang lain 
+                    dengan menghindari kompleksitas yang tidak perlu.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <b>Pemantauan Ketergantungan Antar Komponen:</b>Perhatikan ketergantungan antar 
+                    kelas atau modul dalam proyek Anda. Identifikasi dan evaluasi ketergantungan 
+                    yang tidak perlu atau berlebihan dan ambil langkah-langkah untuk memecahnya 
+                    menjadi bagian yang lebih kecil dan lebih fokus.
+                  </p>
+                </li>
+              </ol>
+              <p>
+                Dengan menerapkan strategi ini secara konsisten, Anda dapat mengatasi Speculative Generality 
+                dalam kode sumber Anda dan memastikan bahwa proyek perangkat lunak Anda tetap efisien, 
+                mudah dipelihara, dan sesuai dengan kebutuhan saat ini tanpa membebani dengan kompleksitas 
+                yang tidak perlu.
+              </p>
+            </div>
+            <br />
         <div class="contoh-kasus">
           <li><h4>Contoh Kasus</h4></li>
           <p>

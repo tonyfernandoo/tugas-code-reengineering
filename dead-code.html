@@ -114,22 +114,134 @@
           </div>
         </nav>
 
-        <h2>Dead Code</h2>
-        <p>
-            Ketika persyaratan untuk perangkat lunak telah berubah atau koreksi telah dilakukan, tidak ada yang punya waktu untuk membersihkan kode lama. <br>
-            Kode tersebut juga dapat ditemukan dalam kondisi kompleks, ketika salah satu cabang menjadi tidak dapat dijangkau.
-        </p>
+        <h1>Dead Code</h1>
+        <div class="content-image m-4">
+          <img
+            src="assets/dead-code-01.png"
+            style="height: 13vw; width: 100%; object-fit: contain"
+            alt="Divergent Change"
+          />
+        </div>
+        <br />
+        <div class="sub-section">
+          <ul>
+            <div class="penjelasan">
+              <li><h4>Apa Itu Dead Code?</h4></li>
+              <p>
+                <b><i>Dead Code</i></b
+                >, adalah istilah yang digunakan dalam pengembangan perangkat lunak 
+                untuk merujuk pada bagian-bagian dari kode sumber yang tidak lagi 
+                digunakan atau dieksekusi dalam aplikasi. Dalam konteks code smell, 
+                Dead Code merupakan salah satu indikasi bahwa terdapat fragmen kode 
+                yang tidak memberikan kontribusi fungsional apa pun kepada aplikasi.
+              </p>
+              <p>
+                Penyebab <b><i>Dead Code</i></b> bisa bermacam-macam, mulai dari 
+                refaktorisasi kode yang tidak sempurna hingga perubahan kebutuhan 
+                fungsional aplikasi.
+              </p>
+              <p>
+                Mengidentifikasi <b><i>Dead Code</i></b> adalah bagian penting dari 
+                pemeliharaan kode yang baik. Dengan membersihkan Dead Code dari 
+                proyek Anda, Anda dapat meningkatkan kebersihan, keterbacaan, dan 
+                kinerja keseluruhan dari aplikasi Anda.
+              </p>
+            </div>
 
-        <h2>Treatment</h2>
-        <p>
-            1. Hapus kode yang tidak digunakan dan file yang tidak diperlukan <br>
-            2. Jika subclass atau superclass digunakan <br>
-            - Inline Class <br>
-            - Collapse Hierarchy <br>
-            3. Untuk menghapus parameter yang tidak diperlukan <br>
-            - Remove Parameter <br>
-        </p>
-        <br>
+            <br />
+            <div class="tanda-tanda">
+              <li><h4>Tanda-tanda Dead Code</h4></li>
+              <p>
+                Bagaimana kita tahu jika kode kita terdapat adanya Dead Code?
+                Berikut adalah beberapa tanda yang dapat membantu Anda
+                mengidentifikasi keberadaannya:
+              </p>
+              <ol>
+                <li>
+                  <p>
+                    <b>Fungsi atau Metode Tidak Dipanggil:</b> Perhatikan fungsi atau 
+                    metode yang didefinisikan namun tidak pernah dipanggil dari bagian 
+                    lain dalam kode. Fungsi-fungsi ini mungkin merupakan bagian dari 
+                    implementasi lama yang tidak lagi diperlukan atau telah digantikan 
+                    oleh fungsionalitas baru.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <b>Variabel Tidak Digunakan:</b> Tinjau variabel yang dideklarasikan 
+                    tetapi tidak pernah digunakan dalam aliran eksekusi program. Variabel 
+                    yang tidak digunakan ini sering kali merupakan sisa-sisa dari pengembangan 
+                    sebelumnya atau kesalahan dalam logika program.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <b>Kode yang Tidak Diakses:</b> Perhatikan modul, kelas, atau bagian-bagian 
+                    kode lain yang tidak pernah diakses dalam aplikasi. Kode-kode ini mungkin 
+                    merupakan sisa-sisa dari iterasi pengembangan sebelumnya yang tidak lagi 
+                    relevan dengan kebutuhan aplikasi saat ini.
+                  </p>
+                </li>
+              </ol>
+              <p>
+                Dengan memperhatikan tanda-tanda ini, Anda dapat mengidentifikasi Dead Code dalam 
+                kode sumber Anda dan mengambil langkah-langkah yang diperlukan untuk membersihkannya. 
+                Dengan membersihkan Dead Code secara teratur, Anda dapat menjaga kebersihan dan 
+                kualitas dari kode Anda, serta meningkatkan efisiensi dan keterbacaan dari proyek 
+                perangkat lunak Anda.
+              </p>
+            </div>
+            <br />
+            <div class="strategi">
+              <li><h4>Strategi untuk Mengatasi Dead Code</h4></li>
+              <p>
+                Mengatasi Dead Code dalam kode sumber merupakan langkah penting untuk 
+                meningkatkan kebersihan, keterbacaan, dan performa dari aplikasi Anda. 
+                Berikut adalah beberapa strategi yang dapat Anda terapkan untuk mengatasi 
+                Dead Code:
+              </p>
+              <ol>
+                <li>
+                  <p>
+                    <b>Analisis Kode yang Teliti:</b>  Lakukan analisis kode yang teliti 
+                    untuk mengidentifikasi bagian-bagian kode yang tidak aktif atau tidak 
+                    digunakan. Tinjau setiap fungsi, metode, variabel, dan modul untuk 
+                    memastikan bahwa mereka benar-benar digunakan dalam aliran eksekusi program.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <b>Pembersihan Kode yang Rutin:</b> Tetapkan jadwal rutin untuk membersihkan 
+                    Dead Code dari proyek Anda. Buat daftar potensial kode yang tidak digunakan 
+                    dan identifikasi mana yang dapat dihapus atau dinonaktifkan.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <b>Pemantauan Perubahan Kode:</b>
+                    Perhatikan setiap perubahan yang terjadi dalam proyek Anda dan pastikan bahwa 
+                    Dead Code tidak muncul kembali. Manfaatkan alat bantu seperti sistem kontrol 
+                    versi untuk melacak perubahan kode dan memeriksa adanya penambahan Dead Code.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <b>Pengujian dan Validasi:</b>Setelah menghapus atau menonaktifkan Dead Code, 
+                    lakukan pengujian menyeluruh untuk memastikan bahwa perubahan tersebut tidak 
+                    menyebabkan masalah baru dalam aplikasi Anda. Pastikan untuk menguji berbagai 
+                    skenario penggunaan untuk memverifikasi bahwa aplikasi masih berfungsi dengan baik.
+                  </p>
+                </li>
+              </ol>
+              <p>
+                Dengan menerapkan strategi ini secara konsisten, Anda dapat mengatasi Dead Code dalam 
+                kode sumber Anda dan meningkatkan kebersihan serta efektivitas dari proyek perangkat 
+                lunak yang Anda kembangkan. Teruslah memantau dan memperbarui kode Anda secara teratur 
+                untuk menghindari akumulasi Dead Code dan memastikan bahwa aplikasi Anda tetap efisien 
+                dan mudah dipelihara.
+              </p>
+            </div>
+            <br />
         <div class="contoh-kasus">
           <li><h4>Contoh Kasus</h4></li>
           <p>
