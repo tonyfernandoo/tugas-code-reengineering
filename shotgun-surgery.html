@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Shotgun Surgery</title>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
@@ -11,6 +11,7 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="prism/prism.css" />
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
       integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -54,7 +55,9 @@
                 <a href="shotgun-surgery.html">Shotgun Surgery</a>
               </li>
               <li>
-                <a href="parallel-inheritanve-hierarchies.html">Parallel Inheritance Hierarchies</a>
+                <a href="parallel-inheritanve-hierarchies.html"
+                  >Parallel Inheritance Hierarchies</a
+                >
               </li>
             </ul>
           </li>
@@ -89,7 +92,7 @@
           </li>
         </ul>
         <div class="footer">
-          <p>&copy; 2024 Your Company. All rights reserved.</p>
+          <p>&copy; 2024 Anthony Fernando Setiabudi & Aryo Bhaskaraputra. All rights reserved.</p>
         </div>
       </nav>
 
@@ -107,23 +110,235 @@
                 <path class="line" d="M7 16 27 16"></path>
               </svg>
             </label>
-            <!-- <button type="button" id="sidebarCollapse" class="btn btn-info">
-              <i class="fas fa-align-left"></i>
-              <span>Toggle Sidebar</span>
-            </button> -->
           </div>
         </nav>
 
-        <h2>Shotgun</h2>
-        <p>
-            Satu tanggung jawab telah dibagi di antara sejumlah besar class. Hal ini dapat terjadi setelah penerapan Divergent Change secara berlebihan.
-        </p>
+        <h1>Shotgun Surgery</h1>
+        <div class="content-image m-4">
+          <img
+            src="assets/shotgun-surgery-01-3x.png"
+            style="height: 13vw; width: 100%; object-fit: contain"
+            alt="Divergent Change"
+          />
+        </div>
+        <br />
+        <div class="sub-section">
+          <ul>
+            <div class="penjelasan">
+              <li><h4>Apa Itu Shotgun Surgery?</h4></li>
+              <p>
+                <b><i>Shotgun Surgery</i></b>
+                , adalah sebuah code smell yang terjadi ketika satu perubahan
+                kecil dalam kode mengharuskan kita melakukan sejumlah besar
+                perubahan di berbagai tempat dalam kode tersebut. Analoginya
+                seperti menggunakan senapan patah untuk melakukan serangkaian
+                tembakan kecil yang tersebar luas.
+              </p>
+              <p>
+                Code smell ini mencerminkan kurangnya pemisahan tanggung jawab
+                dalam struktur kode kita, sehingga setiap perubahan kecil
+                berdampak besar pada berbagai bagian sistem.
+                <b><i>Shotgun Surgery</i></b> sering kali menjadi tanda bahwa
+                kita tidak mematuhi prinsip Single Responsibility Principle
+                (SRP), yang menyarankan agar setiap kelas atau modul memiliki
+                satu dan hanya satu alasan untuk berubah. Dengan memahami esensi
+                dari <b><i>Shotgun Surgery</i></b
+                >, kita dapat mulai mengidentifikasi dan mengatasi pola-pola ini
+                dalam kode kita, meningkatkan kualitas, keterbacaan, dan
+                keberlanjutan kode dalam jangka panjang.
+              </p>
+            </div>
 
-        <h2>Treatment</h2>
-        <p>
-            1. Jika tidak ada kelas yang sesuai untuk ini, buatlah kelas baru <br>
-            - Move Method <br>
-            - Move Field <br>
-            2. Jika memindahkan code ke class yang sama membuat class asli hampir kosong <br>
-            - Inline Class <br>
-        </p>
+            <br />
+            <div class="tanda-tanda">
+              <li><h4>Tanda-tanda Shotgun Surgery</h4></li>
+              <p>
+                Bagaimana kita tahu jika kode kita mengalami
+                <b><i>Shotgun Surgery</i></b
+                >? Berikut adalah beberapa tanda yang dapat membantu Anda
+                mengidentifikasi keberadaannya:
+              </p>
+              <ol>
+                <li>
+                  <p>
+                    <b>Perubahan Berantai:</b> Jika perubahan kecil dalam kode
+                    mengharuskan kita melakukan perubahan di banyak lokasi yang
+                    berbeda, ini bisa menjadi tanda Shotgun Surgery. Kita
+                    mungkin menemukan diri kita berpindah-pindah antara berbagai
+                    kelas atau modul untuk melakukan perubahan yang seharusnya
+                    terkonsentrasi dalam satu tempat.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <b>Kode Duplikat:</b> Adanya kode duplikat yang tersebar
+                    luas di berbagai bagian kode juga bisa menjadi tanda Shotgun
+                    Surgery. Ketika kita menemukan bahwa kita harus mengubah
+                    kode yang sama di banyak tempat untuk melakukan perubahan
+                    tertentu, hal ini menunjukkan bahwa kita mungkin menghadapi
+                    Shotgun Surgery.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <b>Fragilitas Kode:</b> Shotgun Surgery sering kali
+                    meningkatkan fragilitas kode, di mana perubahan kecil dapat
+                    dengan mudah menyebabkan bug atau kegagalan di berbagai
+                    bagian sistem. Jika kita merasa bahwa kode kita rentan
+                    terhadap perubahan kecil yang tidak terduga, ini bisa
+                    menjadi tanda Shotgun Surgery.
+                  </p>
+                </li>
+              </ol>
+              <p>
+                Dengan memahami tanda-tanda ini, kita dapat lebih mudah
+                mengidentifikasi keberadaan Shotgun Surgery dalam kode kita dan
+                mengambil langkah-langkah untuk mengatasi pola-pola ini guna
+                meningkatkan kualitas dan keberlanjutan kode.
+              </p>
+            </div>
+            <br />
+            <div class="strategi">
+              <li><h4>Strategi untuk Mengatasi Shotgun Surgery</h4></li>
+              <p>
+                Refactoring adalah praktik penting dalam mengatasi Shotgun
+                Surgery dalam kode. Dengan melakukan beberapa teknik refactoring
+                seperti
+                <b><i>"Move Method", "Move Field", dan "Inline Class"</i></b> ,
+                kita dapat mengurangi ketergantungan antar kelas dan memisahkan
+                tanggung jawab dengan lebih baik. Berikut adalah beberapa
+                langkah refactoring yang dapat kita terapkan:
+              </p>
+              <ol>
+                <li>
+                  <p>
+                    <b>Move Method:</b> Dengan teknik ini, kita dapat
+                    memindahkan suatu metode yang sering berubah bersama-sama ke
+                    dalam kelas yang lebih sesuai. Dengan demikian, kita
+                    mengurangi dampak perubahan kecil pada banyak kelas lainnya.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <b>Move Field:</b> Jika sebuah atribut sering diakses oleh
+                    metode-metode dalam kelas lain, pertimbangkan untuk
+                    memindahkannya ke kelas yang lebih tepat. Dengan cara ini,
+                    kita mengurangi ketergantungan dan memperbaiki desain yang
+                    rentan terhadap Shotgun Surgery.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <b>Inline Class:</b>
+                    Jika sebuah kelas tidak lagi memiliki tanggung jawab yang
+                    cukup untuk berdiri sendiri, kita dapat mempertimbangkan
+                    untuk "inline" atau menggabungkannya kembali ke kelas yang
+                    menggunakan fungsionalitas tersebut. Ini membantu mengurangi
+                    ketergantungan yang tidak perlu antar kelas.
+                  </p>
+                </li>
+              </ol>
+              <p>
+                Dengan menerapkan strategi-strategi refactoring ini secara
+                bijaksana, kita dapat merapikan kode kita, meningkatkan
+                pemisahan tanggung jawab, dan mengurangi risiko dari Shotgun
+                Surgery. Hal ini membantu menjaga kode kita tetap bersih,
+                terkelola dengan baik, dan mudah dipahami oleh tim pengembangan.
+              </p>
+            </div>
+            <br />
+            <div class="contoh-kasus">
+              <li><h4>Contoh Kasus</h4></li>
+              <p>
+                Kita memiliki dua kelas, <b>"Order" dan "Customer"</b>, yang
+                terlibat dalam proses pembuatan pesanan. Setiap kali sebuah
+                pesanan dibuat, kita perlu memperbarui informasi terkait
+                pelanggan. Namun, proses untuk melakukan pembaruan ini tersebar
+                di berbagai metode dalam kedua kelas tersebut, yang menghasilkan
+                Shotgun Surgery.
+              </p>
+              <h5 style="text-align: center">Before</h5>
+              <div class="container">
+                <div class="box-code">
+                  <pre><code class="language-java">
+class Order {
+    private Customer customer;
+
+    public void createOrder() {
+        // Logika untuk membuat pesanan
+        updateCustomerInfo();
+    }
+
+    private void updateCustomerInfo() {
+        customer.updateOrderHistory();
+        customer.updatePoints();
+    }
+}
+
+class Customer {
+    public void updateOrderHistory() {
+        // Logika untuk memperbarui riwayat pesanan
+    }
+
+    public void updatePoints() {
+        // Logika untuk memperbarui poin pelanggan
+    }
+  }
+                </code></pre>
+                </div>
+              </div>
+              <br />
+              <p>
+                Dalam kode di atas, proses pembaruan informasi pelanggan
+                (<b>"updateOrderHistory"</b> dan <b>"updatePoints"</b>) terjadi di dalam metode
+                <b>"updateCustomerInfo"</b> di kelas <b>"Order"</b>. Namun, metode-metode ini
+                seharusnya menjadi tanggung jawab dari kelas <b>"Customer"</b>. Hal ini
+                menyebabkan Shotgun Surgery karena setiap kali kita ingin
+                memperbarui informasi pelanggan, kita harus melakukan perubahan
+                di berbagai tempat dalam kode.
+              </p>
+              <br />
+              <p>Kita dapat menggunakan teknik <b><i>"Move Method"</i></b>  untuk memindahkan metode <b>"updateOrderHistory"</b> dan <b>"updatePoints"</b> dari kelas <b>"Customer"</b> ke kelas <b>"Order"</b> , sehingga proses pembaruan informasi pelanggan terpusat dalam satu tempat.</p>
+              <h5 style="text-align: center">After</h5>
+              <div class="container">
+                <div class="box-code">
+                  <pre><code class="language-java">
+class Order {
+  private Customer customer;
+                  
+  public void createOrder() {
+      // Logika untuk membuat pesanan
+      customer.updateOrderInfo();
+    }
+  }
+                  
+class Customer {
+  public void updateOrderInfo() {
+      updateOrderHistory();
+      updatePoints();
+  }
+                  
+  private void updateOrderHistory() {
+      // Logika untuk memperbarui riwayat pesanan
+  }
+                  
+  private void updatePoints() {
+      // Logika untuk memperbarui poin pelanggan
+  }
+}          
+                </code></pre>
+                </div>
+              </div>
+            <br />
+            <br />
+            <p>
+              Setelah menggunakan teknik <b>"Move Method"</b> , metode <b>"updateOrderHistory"</b> dan <b>"updatePoints"</b> sekarang menjadi bagian dari metode <b>"updateOrderInfo"</b> di kelas <b>"Customer"</b>. Ini menghilangkan <b><i>Shotgun Surgery</i></b> karena pembaruan informasi pelanggan terpusat dalam satu tempat di dalam kelas <b>"Customer"</b>, dan kita tidak perlu lagi menyebarkan perubahan ke berbagai tempat dalam kode.
+            </p>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="prism/prism.js"></script>
+  </body>
+</html>
